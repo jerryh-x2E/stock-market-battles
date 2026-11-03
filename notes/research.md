@@ -27,7 +27,7 @@ Some stock APIs we can use are:
 
 
 ## Adding Users
-- A user would need a unique username, password, and email address for verification and recovery
+- A user would need a unique username, password, and email address for verification and recovery (optional)
 - Users directly invite their friends to a game from friends list
 - If a user who hasn't joined or been invited visits a game link, they can only spectate
 - Users should not be able to join a game after it starts
