@@ -25,7 +25,7 @@ function signUp(username, password) {
         if (error.code === 23505) { // Unique Constraint Violation
             return { code: 400, msg: "Player with this username already exists" };
         }
-        return { code: 500, msg: "An error occurred" };
+        return { code: 500, msg: "Something went wrong" };
     });
 }
 
