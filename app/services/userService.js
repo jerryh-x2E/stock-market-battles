@@ -54,4 +54,4 @@ function getUserId(username) {
     ).then(result => result.rows[0]);
 }
 
-module.exports = { signUp, checkLogin, checkUsername };
+module.exports = { signUp, checkLogin, checkUsername, getUserId };

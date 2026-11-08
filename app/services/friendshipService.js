@@ -54,3 +54,5 @@ function getValues(senderId, receiverId) {
     [senderId, receiverId, true] : 
     [receiverId, senderId, false];
 }
+
+module.exports = { getFriends, makeFriendRequest, acceptFriendRequest, rejectFriendRequest };
