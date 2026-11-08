@@ -18,7 +18,8 @@ CREATE TABLE users (
 CREATE TABLE friendships (
     user_low    INT NOT NULL,
     user_high   INT NOT NULL,
-    accepted    BOOLEAN NOT NULL DEFAULT FALSE
+    accepted    BOOLEAN NOT NULL DEFAULT FALSE,
+    is_sender_low BOOLEAN NOT NULL
 
     CONSTRAINT friendships_pk
         PRIMARY KEY (user_low, user_high),
