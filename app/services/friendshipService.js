@@ -12,7 +12,7 @@ function getFriends(userId) {
             accepted: friendship.accepted,
             userIsSender: isUserLow === friendship.is_sender_low
          };
-    }))
+    }));
 }
 
 function makeFriendRequest(senderId, receiverId) {

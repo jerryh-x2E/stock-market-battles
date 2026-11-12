@@ -19,7 +19,7 @@ CREATE TABLE friendships (
     user_low    INT NOT NULL,
     user_high   INT NOT NULL,
     accepted    BOOLEAN NOT NULL DEFAULT FALSE,
-    is_sender_low BOOLEAN NOT NULL
+    is_sender_low BOOLEAN NOT NULL,
 
     CONSTRAINT friendships_pk
         PRIMARY KEY (user_low, user_high),
@@ -68,9 +68,6 @@ CREATE TABLE user_games (
 
     CONSTRAINT user_games_pk
         PRIMARY KEY ("user_id", game),
-
-    CONSTRAINT user_games_balance_check
-        CHECK (balance >= 0),
 
     CONSTRAINT user_games_user_fk
         FOREIGN KEY (user_id) REFERENCES users(id)

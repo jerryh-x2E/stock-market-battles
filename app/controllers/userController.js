@@ -13,7 +13,7 @@ function logIn(req, res) {
         }
     }).catch(error => {
         res.status(500).send();
-    })
+    });
 }
 
 function register(req, res) {
