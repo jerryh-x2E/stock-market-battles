@@ -51,7 +51,13 @@ function checkUsername(username) {
 function getUserId(username) {
     return pool.query(
         "SELECT id FROM users WHERE username = $1", [username]
-    ).then(result => result.rows[0]);
+    ).then(result => {
+        if (result.rowCount !== 0) {
+            return result.rows[0].id;
+        } else {
+            throw new RangeError();
+        }
+    });
 }
 
 module.exports = { signUp, checkLogin, checkUsername, getUserId };

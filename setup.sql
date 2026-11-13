@@ -77,3 +77,8 @@ CREATE TABLE user_games (
         FOREIGN KEY (game) REFERENCES games(game_code)
 );
 
+CREATE TABLE sessions {
+    user_id     INT NOT NULL REFERENCES users(user_id),
+    token       CHAR(64) NOT NULL,
+    CONSTRAINT  token_unique UNIQUE(token);
+};
