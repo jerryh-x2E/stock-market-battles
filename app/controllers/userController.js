@@ -25,10 +25,10 @@ function logIn(req, res) {
                 }
             });
         } else {
-            res.status(401).send();
+            res.status(401).json({ msg: "Invalid username or password" });
         }
     }).catch(error => {
-        res.status(500).send();
+        res.status(500).json({ msg: "Something went wrong" });
     });
 }
 
