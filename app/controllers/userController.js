@@ -46,6 +46,12 @@ function register(req, res) {
     if (!req.body.username || !req.body.password) {
         return res.status(400).json({ msg: "Please enter a username and a password" });
     }
+    if (!req.body.confirmPassword) {
+        return res.status(400).json({ msg: "Please confirm your password" });
+    }
+    if (!req.body.password === req.body.confirmPassword) {
+        return res.status(400).json({ msg: "Password do not match" })
+    }
     signUp(req.body.username, req.body.password).then(result => {
         res.status(result.code).json({ msg: result.msg });
     }).catch(error => {
