@@ -82,3 +82,13 @@ CREATE TABLE sessions (
     token       CHAR(64) NOT NULL,
     CONSTRAINT  token_unique UNIQUE(token)
 );
+
+CREATE TABLE stock_prices (
+    ticker      VARCHAR(10) NOT NULL,
+    price       NUMERIC(15, 4) NOT NULL,
+    prev_close  NUMERIC(15, 4),
+    updated_at  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT stock_prices_pk
+        PRIMARY KEY (ticker)
+);
