@@ -1,10 +1,9 @@
 const btn = document.getElementById("submit");
 const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
-const msg = document.getElementById("login-error");
+const loginError = document.getElementById("login-error");
 
 btn.addEventListener("click", event => {
-    msg.classList.remove("error");
     fetch("/api/sessions", {
         method: "POST",
         headers: {
@@ -16,13 +15,11 @@ btn.addEventListener("click", event => {
         })
     }).then(response => {
         if (!response.ok) {
-            msg.classList.add("error");
             response.json().then(body => {
-                msg.textContent = body.msg;
+                loginError.textContent = body.msg;
             });
         }
     }).catch(error => {
-        msg.classList.add("error");
-        msg.textContent = "Something went wrong";
+        loginError.textContent = "Something went wrong";
     });
 });

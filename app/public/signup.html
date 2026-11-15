@@ -2,9 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Log In - Stock Market Simulator</title>
+        <title>Sign up - Stock Market Simulator</title>
         <link rel="stylesheet" href="styles/styles.css">
         <link rel="stylesheet" href="styles/fullscreen.css">
+        <style>
+            .field { margin: 0; }
+        </style>
     </head>
     <body>
         <div id="nav">
@@ -18,7 +21,7 @@
             <div id="card-header">
                 <h2>Sign Up</h2>
             </div>
-            <small id="signup-error"></small>
+            <small class="error" id="signup-error"></small>
             <div id="form">
                 <div class="field">
                     <label for="username">Username (3-24 characters)</label>
@@ -30,17 +33,25 @@
                         maxlength="24" 
                         required
                     />
-                    <small id="username-error"></small>
+                    <small class="error" id="username-error"></small>
                 </div>
                 <div class="field">
                     <label for="password">Password (at least 6 characters)</label>
-                    <input id="password" type="password">
-                    <small id="password-error"></small>
+                    <input 
+                        id="password" 
+                        type="password"
+                        placeholder="Enter your password"
+                    />
+                    <small class="error" id="password-error"></small>
                 </div>
                 <div class="field">
                     <label for="password">Confirm password</label>
-                    <input id="confirm-password" type="password">
-                    <div id="confirm-error"></div>
+                    <input 
+                        id="confirm-password"
+                        placeholder="Confirm your password" 
+                        type="password"
+                    />
+                    <small class="error" id="confirm-error"></small>
                 </div>
             </div>
             <button id="submit">Sign Up</button>

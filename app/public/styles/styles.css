@@ -25,14 +25,12 @@ a {
     text-decoration: none;
 }
 
-small {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 8px;
-}
-
 .error {
     color: red;
+    min-height: 1.6rem;
+    padding: 0.5rem 0;
+    border: none;
+    border-radius: 8px;
 }
 
 #nav {
