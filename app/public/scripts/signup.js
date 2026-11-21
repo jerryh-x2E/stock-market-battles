@@ -1,4 +1,3 @@
-const loginBtn = document.getElementById("nav-login");
 const submitBtn = document.getElementById("submit");
 
 const usernameInput = document.getElementById("username");
@@ -19,10 +18,6 @@ function checkPasswords() {
 }
 
 submitBtn.disabled = true;
-
-loginBtn.addEventListener("click", event => {
-    window.location.href = "login.html"
-});
 
 usernameInput.addEventListener("input", event => {
     const usernameLength = usernameInput.value.length;
@@ -79,6 +74,8 @@ submitBtn.addEventListener("click", event => {
             response.json().then(body => {
                 loginError.textContent = body.msg;
             });
+        } else {
+            window.location.href = "login.html";
         }
     }).catch(error => {
         loginError.textContent = "Something went wrong";
